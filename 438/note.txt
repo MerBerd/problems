@@ -1,0 +1,18 @@
+for i := 0; i <= n-m; i++ { // stop at n-m to avoid overflow
+        freqS := make([]int, 26)
+        for j := 0; j < m; j++ {
+            freqS[s[i+j]-'a']++
+        }
+
+        match := true
+        for k := 0; k < 26; k++ {
+            if freqS[k] != freqP[k] {
+                match = false
+                break
+            }
+        }
+
+        if match {
+            result = append(result, i)
+        }
+    }
